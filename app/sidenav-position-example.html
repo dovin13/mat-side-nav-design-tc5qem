@@ -1,0 +1,39 @@
+
+
+<div *ngIf="!shouldRun">Please open on Stackblitz to see result</div>
+
+<mat-sidenav-container class="example-container" *ngIf="shouldRun">
+  <mat-sidenav #sidenav mode="over" [(opened)]="opened" (opened)="events.push('open!')"
+               (closed)="events.push('close!')"  style="background-color:lightblue">
+
+               <mat-toolbar-row (click)="toggleMenu()">
+   <mat-icon (click)="toggleMenu()">menu</mat-icon> Menu
+  </mat-toolbar-row>
+    <mat-toolbar>  
+  
+
+  <mat-toolbar-row (click)="toggleMenu()">
+    <mat-icon>person</mat-icon> Users
+  </mat-toolbar-row>
+
+    <mat-toolbar-row (click)="toggleMenu()">
+    <mat-icon>bug_report</mat-icon> Errors
+  </mat-toolbar-row>
+
+    <mat-toolbar-row (click)="toggleMenu()">
+    <mat-icon>settings</mat-icon> Settings
+  </mat-toolbar-row>
+
+</mat-toolbar>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+     <mat-toolbar style="background-color:lightblue"> 
+  
+ <mat-icon (click)="toggleMenu()">menu</mat-icon>
+    <!-- <p><mat-checkbox [(ngModel)]="opened">sidenav.opened</mat-checkbox></p> -->
+    <!-- <p><button mat-button (click)="sidenav.toggle()"></button></p> -->
+     <span>QA Dashboard</span>
+    </mat-toolbar>
+
+    <mat-tab-group>
